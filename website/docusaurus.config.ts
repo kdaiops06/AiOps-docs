@@ -2,34 +2,23 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'AIOps Vista',
-  tagline: 'AIOps | AI Infrastructure | AI Learning | Tool Setup',
+  tagline: 'DevOps & AIOps Consulting | Cloud Architecture | Intelligent Operations',
   favicon: 'img/favicon.ico',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://docs.aiopsvista.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://aiopsvista.com',
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'kdaiops06', // Usually your GitHub org/user name.
-  projectName: 'AiOps-docs', // Usually your repo name.
+  organizationName: 'kdaiops06',
+  projectName: 'AiOps-docs',
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -41,22 +30,17 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/kdaiops06/AiOps-docs/tree/main/website/',
+          editUrl: 'https://github.com/kdaiops06/AiOps-docs/tree/main/website/',
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: 'Recent Posts',
+          blogSidebarCount: 10,
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/kdaiops06/AiOps-docs/tree/main/website/',
-          // Useful options to enforce blogging best practices
+          editUrl: 'https://github.com/kdaiops06/AiOps-docs/tree/main/website/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -69,30 +53,31 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    metadata: [
+      {name: 'keywords', content: 'AIOps, DevOps, consulting, cloud architecture, Kubernetes, observability, AI operations, infrastructure'},
+      {name: 'description', content: 'AIOps Vista — Professional DevOps & AIOps consulting services. Cloud architecture, Kubernetes, observability, and intelligent operations.'},
+    ],
     navbar: {
       title: 'AIOps Vista',
       logo: {
-        alt: 'AIOps Vista Logo',
+        alt: 'AIOps Vista',
         src: 'img/logo.svg',
       },
       items: [
+        {to: '/services', label: 'Services', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'Documentation',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://aiopsvista.com',
-          label: 'Main Site',
-          position: 'right',
-        },
+        {to: '/about', label: 'About', position: 'left'},
+        {to: '/contact', label: 'Contact', position: 'left'},
         {
           href: 'https://github.com/kdaiops06/AiOps-docs',
           label: 'GitHub',
@@ -104,50 +89,42 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Consulting',
           items: [
-            {
-              label: 'Getting Started',
-              to: '/docs/',
-            },
+            {label: 'Services', to: '/services'},
+            {label: 'Case Studies', to: '/services#case-studies'},
+            {label: 'Book a Consultation', to: '/contact'},
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {label: 'Documentation', to: '/docs/'},
+            {label: 'Blog', to: '/blog'},
+            {label: 'AIOps Guide', to: '/docs/category/aiops'},
+            {label: 'Tool Setup', to: '/docs/category/tool-setup'},
           ],
         },
         {
           title: 'Topics',
           items: [
-            {
-              label: 'AIOps',
-              to: '/docs/category/aiops',
-            },
-            {
-              label: 'AI Infrastructure',
-              to: '/docs/category/ai-infrastructure',
-            },
-            {
-              label: 'Tool Setup',
-              to: '/docs/category/tool-setup',
-            },
+            {label: 'AIOps', to: '/docs/category/aiops'},
+            {label: 'AI Infrastructure', to: '/docs/category/ai-infrastructure'},
+            {label: 'Cloud & DevOps', to: '/docs/category/cloud-devops'},
+            {label: 'Hands-On Labs', to: '/docs/category/labs'},
           ],
         },
         {
-          title: 'More',
+          title: 'Connect',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/kdaiops06/AiOps-docs',
-            },
-            {
-              label: 'Website',
-              href: 'https://aiopsvista.com',
-            },
+            {label: 'About', to: '/about'},
+            {label: 'Contact', to: '/contact'},
+            {label: 'GitHub', href: 'https://github.com/kdaiops06/AiOps-docs'},
+            {label: 'LinkedIn', href: 'https://linkedin.com'},
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AIOps Vista. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AIOps Vista. All rights reserved.`,
     },
     prism: {
       theme: prismThemes.github,

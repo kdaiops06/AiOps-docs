@@ -1,155 +1,203 @@
 import type {ReactNode} from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.heroButtons}>
-          <Link className={styles.heroButtonPrimary} to="/docs/">
-            Explore Docs
-          </Link>
-          <Link className={styles.heroButtonSecondary} to="/blog">
-            Read Blog
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-const stats = [
-  { value: '6+', label: 'Topics' },
-  { value: '30+', label: 'Guides' },
-  { value: '5+', label: 'Labs' },
-  { value: '10+', label: 'Tools' },
-];
-
-const features = [
-  {
-    icon: '📊',
-    title: 'AIOps & Observability',
-    description: 'Master AI-driven IT operations — monitoring, anomaly detection, incident management, and predictive scaling.',
-    tag: 'Operations',
-    tagColor: '#e8f5e9',
-    tagTextColor: '#2e7d32',
-    iconBg: 'linear-gradient(135deg, #e8f5e9, #c8e6c9)',
-  },
-  {
-    icon: '🏗️',
-    title: 'AI Infrastructure',
-    description: 'Build production-grade AI platforms with GPU clusters, Kubernetes, model serving, and MLOps pipelines.',
-    tag: 'Infrastructure',
-    tagColor: '#e3f2fd',
-    tagTextColor: '#1565c0',
-    iconBg: 'linear-gradient(135deg, #e3f2fd, #bbdefb)',
-  },
-  {
-    icon: '🧠',
-    title: 'AI & ML Learning',
-    description: 'From ML fundamentals to LLMs, prompt engineering, RAG, fine-tuning, and building AI agents.',
-    tag: 'Learning',
-    tagColor: '#fce4ec',
-    tagTextColor: '#c62828',
-    iconBg: 'linear-gradient(135deg, #fce4ec, #f8bbd0)',
-  },
-  {
-    icon: '🛠️',
-    title: 'Tool Setup Guides',
-    description: 'Step-by-step guides for VS Code, Claude, GitHub Copilot, Cursor, Docker, Jupyter, and more.',
-    tag: 'Tools',
-    tagColor: '#fff3e0',
-    tagTextColor: '#e65100',
-    iconBg: 'linear-gradient(135deg, #fff3e0, #ffe0b2)',
-  },
-  {
-    icon: '☁️',
-    title: 'Cloud & DevOps',
-    description: 'Deploy AI on AWS, Azure, and GCP. CI/CD for ML models, monitoring, and production best practices.',
-    tag: 'Cloud',
-    tagColor: '#ede7f6',
-    tagTextColor: '#4527a0',
-    iconBg: 'linear-gradient(135deg, #ede7f6, #d1c4e9)',
-  },
-  {
-    icon: '🧪',
-    title: 'Hands-On Labs',
-    description: 'Build real projects — AIOps pipelines, AI chatbots, log anomaly detection, and RAG assistants.',
-    tag: 'Projects',
-    tagColor: '#e0f7fa',
-    tagTextColor: '#00695c',
-    iconBg: 'linear-gradient(135deg, #e0f7fa, #b2ebf2)',
-  },
-];
-
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title="Knowledge Hub"
-      description="AIOps, AI Infrastructure, AI Learning, and Tool Setup — your knowledge-sharing platform.">
-      <HomepageHeader />
+      title="DevOps & AIOps Consulting"
+      description="AIOps Vista — Professional DevOps & AIOps consulting. Cloud architecture, Kubernetes, observability, and intelligent operations.">
 
-      {/* Stats Bar */}
-      <section className="statsBar">
-        <div className="container">
-          <div className="statsGrid">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="statItem">
-                <h3>{stat.value}</h3>
-                <p>{stat.label}</p>
-              </div>
-            ))}
+      {/* HERO */}
+      <header className="hero-section">
+        <div className="hero-bg-pattern" />
+        <div className="container hero-content">
+          <span className="hero-badge">DevOps & AIOps Consulting</span>
+          <Heading as="h1" className="hero-title">
+            Build Intelligent,<br />Resilient Infrastructure
+          </Heading>
+          <p className="hero-description">
+            We help engineering teams design, automate, and operate cloud-native
+            infrastructure with AI-driven operations. From Kubernetes architecture
+            to AIOps implementation — we deliver results.
+          </p>
+          <div className="hero-actions">
+            <Link className="btn-primary" to="/contact">
+              Book a Free Consultation
+            </Link>
+            <Link className="btn-secondary" to="/services">
+              View Services
+            </Link>
+          </div>
+          <div className="hero-trust">
+            <span>Trusted by teams building on</span>
+            <div className="trust-logos">
+              <span className="trust-item">AWS</span>
+              <span className="trust-item">Azure</span>
+              <span className="trust-item">GCP</span>
+              <span className="trust-item">Kubernetes</span>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Features */}
-      <section className="featuresSection">
-        <div className="sectionTitle">
-          <h2>What You Will Learn</h2>
-          <p>Comprehensive guides and hands-on labs to master AI operations and infrastructure</p>
-        </div>
-        <div className="featuresGrid">
-          {features.map((feature, idx) => (
-            <div key={idx} className="featureCard">
-              <div className="featureIcon" style={{ background: feature.iconBg }}>
-                {feature.icon}
+      <main>
+        {/* STATS */}
+        <section className="stats-section">
+          <div className="container">
+            <div className="stats-row">
+              <div className="stat-block">
+                <span className="stat-number">50+</span>
+                <span className="stat-label">Projects Delivered</span>
               </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-              <span
-                className="featureTag"
-                style={{
-                  background: feature.tagColor,
-                  color: feature.tagTextColor,
-                }}>
-                {feature.tag}
-              </span>
+              <div className="stat-block">
+                <span className="stat-number">40%</span>
+                <span className="stat-label">Avg. Cost Reduction</span>
+              </div>
+              <div className="stat-block">
+                <span className="stat-number">99.9%</span>
+                <span className="stat-label">Uptime Achieved</span>
+              </div>
+              <div className="stat-block">
+                <span className="stat-number">3x</span>
+                <span className="stat-label">Deployment Speed</span>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* CTA */}
-      <section className="ctaSection">
-        <h2>Ready to Get Started?</h2>
-        <p>Dive into our documentation and start building with AI today.</p>
-        <Link className={styles.heroButtonPrimary} to="/docs/">
-          Start Learning
-        </Link>
-      </section>
+        {/* SERVICES OVERVIEW */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">What We Do</span>
+              <h2>Consulting Services</h2>
+              <p>End-to-end DevOps and AIOps solutions tailored for your engineering team.</p>
+            </div>
+            <div className="services-grid">
+              <div className="service-card">
+                <div className="service-icon" style={{background: 'linear-gradient(135deg, #e8f0fe, #d2e3fc)'}}>📊</div>
+                <h3>AIOps Consulting</h3>
+                <p>Implement AI-driven monitoring, anomaly detection, and automated incident response to reduce MTTR by 60%.</p>
+                <Link to="/services#aiops" className="card-link">Learn more →</Link>
+              </div>
+              <div className="service-card">
+                <div className="service-icon" style={{background: 'linear-gradient(135deg, #e6f4ea, #ceead6)'}}>⚙️</div>
+                <h3>DevOps Automation</h3>
+                <p>CI/CD pipelines, GitOps workflows, and infrastructure automation that ship code faster with fewer errors.</p>
+                <Link to="/services#devops" className="card-link">Learn more →</Link>
+              </div>
+              <div className="service-card">
+                <div className="service-icon" style={{background: 'linear-gradient(135deg, #fce8e6, #fad2cf)'}}>☁️</div>
+                <h3>Cloud Architecture</h3>
+                <p>Design scalable, secure, cost-optimized cloud infrastructure on AWS, Azure, or GCP.</p>
+                <Link to="/services#cloud" className="card-link">Learn more →</Link>
+              </div>
+              <div className="service-card">
+                <div className="service-icon" style={{background: 'linear-gradient(135deg, #fef7e0, #feefc3)'}}>🔍</div>
+                <h3>Observability & Monitoring</h3>
+                <p>Full-stack observability with Prometheus, Grafana, Datadog, and custom dashboards.</p>
+                <Link to="/services#observability" className="card-link">Learn more →</Link>
+              </div>
+              <div className="service-card">
+                <div className="service-icon" style={{background: 'linear-gradient(135deg, #f3e8fd, #e8d5f5)'}}>💰</div>
+                <h3>Cost Optimization</h3>
+                <p>Reduce cloud spend by 30-50% through rightsizing, reserved capacity, and architecture optimization.</p>
+                <Link to="/services#cost" className="card-link">Learn more →</Link>
+              </div>
+              <div className="service-card">
+                <div className="service-icon" style={{background: 'linear-gradient(135deg, #e0f7fa, #b2ebf2)'}}>⎈</div>
+                <h3>Kubernetes Architecture</h3>
+                <p>Production-grade Kubernetes clusters with security, scaling, and multi-tenancy best practices.</p>
+                <Link to="/services#kubernetes" className="card-link">Learn more →</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY CHOOSE US */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Why AIOps Vista</span>
+              <h2>Engineering-First Approach</h2>
+              <p>We are practitioners, not just advisors. Real solutions from real engineers.</p>
+            </div>
+            <div className="why-grid">
+              <div className="why-card">
+                <h3>🎯 Battle-Tested Solutions</h3>
+                <p>Every recommendation comes from production experience, not theory. We have built and operated systems at scale.</p>
+              </div>
+              <div className="why-card">
+                <h3>📐 Architecture-First</h3>
+                <p>We design systems that scale. Our approach starts with architecture reviews and ends with production-ready infrastructure.</p>
+              </div>
+              <div className="why-card">
+                <h3>🤖 AI-Native Operations</h3>
+                <p>We integrate AI into your operations pipeline — from anomaly detection to predictive scaling and auto-remediation.</p>
+              </div>
+              <div className="why-card">
+                <h3>📚 Knowledge Transfer</h3>
+                <p>We do not just build — we teach. Every engagement includes documentation, runbooks, and team enablement.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DOCUMENTATION HIGHLIGHT */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Open Knowledge</span>
+              <h2>Technical Documentation</h2>
+              <p>Free, in-depth guides and reference documentation for the community.</p>
+            </div>
+            <div className="docs-highlight-grid">
+              <Link to="/docs/category/aiops" className="doc-card">
+                <h3>📊 AIOps</h3>
+                <p>Monitoring, anomaly detection, incident management, and predictive operations.</p>
+              </Link>
+              <Link to="/docs/category/ai-infrastructure" className="doc-card">
+                <h3>🏗️ AI Infrastructure</h3>
+                <p>GPU clusters, model serving, MLOps pipelines, and infrastructure as code.</p>
+              </Link>
+              <Link to="/docs/category/tool-setup" className="doc-card">
+                <h3>🛠️ Tool Setup</h3>
+                <p>VS Code, Claude, Copilot, Docker, Kubernetes, and development environments.</p>
+              </Link>
+              <Link to="/docs/category/cloud-devops" className="doc-card">
+                <h3>☁️ Cloud & DevOps</h3>
+                <p>AWS, Azure, GCP services, CI/CD pipelines, and production deployments.</p>
+              </Link>
+              <Link to="/docs/category/labs" className="doc-card">
+                <h3>🧪 Hands-On Labs</h3>
+                <p>Build real projects — chatbots, anomaly detection, RAG systems.</p>
+              </Link>
+              <Link to="/docs/category/ai-learning" className="doc-card">
+                <h3>🧠 AI Learning</h3>
+                <p>ML fundamentals, LLMs, prompt engineering, fine-tuning, and AI agents.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="cta-section">
+          <div className="container">
+            <h2>Let's Build Something Great Together</h2>
+            <p>Whether you are modernizing your infrastructure or implementing AIOps from scratch — we can help.</p>
+            <div className="hero-actions">
+              <Link className="btn-primary" to="/contact">
+                Schedule a Consultation
+              </Link>
+              <Link className="btn-secondary-dark" to="/services">
+                Explore Services
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
     </Layout>
   );
 }
