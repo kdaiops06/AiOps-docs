@@ -1,0 +1,150 @@
+name: AI Blog Post Generator
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Blog post topic'
+        required: true
+        type: string
+      tags:
+        description: 'Comma-separated tags (e.g., devops,kubernetes)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  BLOG_DIR: website/blog
+
+jobs:
+  generate-blog-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic pyyaml
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INPUT_TOPIC: ${{ github.event.inputs.topic || '' }}
+          INPUT_TAGS: ${{ github.event.inputs.tags || '' }}
+        run: |
+          python << 'PYEOF'
+          import anthropic
+          import os
+          import datetime
+          import re
+
+          client = anthropic.Anthropic()
+          today = datetime.date.today().isoformat()
+
+          topic = os.environ.get("INPUT_TOPIC", "")
+          tags = os.environ.get("INPUT_TAGS", "")
+
+          if not topic:
+              # Auto-select topic for scheduled runs
+              prompt_topic = """Pick ONE specific, actionable blog post topic for a DevOps/AIOps
+              consulting blog. The topic should be practical and target mid-senior engineers.
+              Categories: DevOps, AIOps, Cloud, Kubernetes, Observability, Platform Engineering, Terraform.
+              Return ONLY the topic title and 2-3 relevant tags as comma-separated values.
+              Format: TOPIC: <title>\nTAGS: <tag1>,<tag2>"""
+
+              topic_response = client.messages.create(
+                  model="claude-sonnet-4-20250514",
+                  max_tokens=200,
+                  messages=[{"role": "user", "content": prompt_topic}],
+              )
+              lines = topic_response.content[0].text.strip().split("\n")
+              topic = lines[0].replace("TOPIC:", "").strip()
+              tags = lines[1].replace("TAGS:", "").strip() if len(lines) > 1 else "devops"
+
+          slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')[:60]
+          tag_list = [t.strip() for t in tags.split(",")]
+          tags_yaml = ", ".join(tag_list)
+
+          prompt = f"""Write a technical blog post about: {topic}
+
+          Requirements:
+          - 1200-1800 words
+          - Target audience: mid-senior DevOps/SRE engineers
+          - Include practical code examples where relevant
+          - Use Markdown with proper headings (h2, h3)
+          - Start with a compelling intro paragraph (this appears in blog listing)
+          - Add <!-- truncate --> after the intro paragraph
+          - Include a call-to-action at the end linking to /contact for consulting
+          - Tone: professional, practical, opinionated
+          - Do NOT include the frontmatter — I will add it
+
+          Write the blog post content only (no frontmatter):"""
+
+          response = client.messages.create(
+              model="claude-sonnet-4-20250514",
+              max_tokens=4000,
+              messages=[{"role": "user", "content": prompt}],
+          )
+
+          content = response.content[0].text.strip()
+          description = content.split("\n")[0][:155].replace('"', "'")
+
+          frontmatter = f"""---
+          title: "{topic}"
+          slug: {slug}
+          authors: [aiopsvista]
+          tags: [{tags_yaml}]
+          description: "{description}"
+          ---"""
+
+          # Clean up indentation in frontmatter
+          frontmatter = "\n".join(line.strip() for line in frontmatter.split("\n"))
+
+          full_post = f"{frontmatter}\n\n{content}\n"
+          filename = f"{today}-{slug}.md"
+          filepath = os.path.join(os.environ.get("BLOG_DIR", "website/blog"), filename)
+
+          with open(filepath, "w") as f:
+              f.write(full_post)
+
+          # Write outputs for PR
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write(f"BLOG_FILE={filepath}\n")
+              f.write(f"BLOG_TITLE={topic}\n")
+              f.write(f"BLOG_SLUG={slug}\n")
+
+          print(f"Generated: {filepath}")
+          PYEOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "blog: ${{ env.BLOG_TITLE }}"
+          title: "📝 New Blog Post: ${{ env.BLOG_TITLE }}"
+          body: |
+            ## AI-Generated Blog Post
+
+            **Title:** ${{ env.BLOG_TITLE }}
+            **File:** `${{ env.BLOG_FILE }}`
+
+            This blog post was generated by the AI content pipeline.
+            Please review the content before merging.
+
+            - [ ] Content accuracy verified
+            - [ ] Code examples tested
+            - [ ] Links are correct
+            - [ ] SEO description is good
+          branch: blog/${{ env.BLOG_SLUG }}
+          labels: blog, ai-generated

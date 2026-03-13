@@ -182,6 +182,73 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
+        {/* FEATURED BLOG POSTS */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">From the Blog</span>
+              <h2>Latest Articles</h2>
+              <p>Practical guides and insights from our consulting practice.</p>
+            </div>
+            <div className="blog-grid">
+              <Link to="/blog/building-aiops-strategy" className="blog-card">
+                <span className="blog-card-tag">AIOps</span>
+                <h3>Building an AIOps Strategy: From Reactive to Predictive</h3>
+                <p>A 90-day plan to transform your operations with AI-driven monitoring and automation.</p>
+                <span className="card-link">Read article →</span>
+              </Link>
+              <Link to="/blog/kubernetes-production-checklist" className="blog-card">
+                <span className="blog-card-tag">Kubernetes</span>
+                <h3>Kubernetes in Production: The 15-Point Checklist</h3>
+                <p>Security, observability, networking, and operational readiness for production K8s.</p>
+                <span className="card-link">Read article →</span>
+              </Link>
+              <Link to="/blog/terraform-module-patterns" className="blog-card">
+                <span className="blog-card-tag">Terraform</span>
+                <h3>Terraform at Scale: Module Patterns That Work</h3>
+                <p>Battle-tested patterns for structuring Terraform at scale across teams and environments.</p>
+                <span className="card-link">Read article →</span>
+              </Link>
+            </div>
+            <div style={{textAlign: 'center', marginTop: '2rem'}}>
+              <Link className="btn-primary" to="/blog">
+                View All Articles →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* NEWSLETTER */}
+        <section className="section">
+          <div className="container">
+            <div className="newsletter-section">
+              <div className="newsletter-text">
+                <span className="section-label">Newsletter</span>
+                <h2>Stay Ahead of the Curve</h2>
+                <p>
+                  Weekly DevOps and AIOps insights — practical guides, tool reviews,
+                  and industry news delivered to your inbox. No spam, unsubscribe anytime.
+                </p>
+                <Link className="btn-primary" to="/newsletter">
+                  Subscribe to Newsletter →
+                </Link>
+              </div>
+              <div className="newsletter-preview">
+                <div className="newsletter-preview-card">
+                  <span className="newsletter-preview-label">What's Inside</span>
+                  <ul>
+                    <li>📰 Weekly tech news digest</li>
+                    <li>🛠️ Practical tutorials and guides</li>
+                    <li>📊 Architecture patterns from the field</li>
+                    <li>🎯 Tool reviews and comparisons</li>
+                    <li>🚀 Early access to courses and templates</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="cta-section">
           <div className="container">

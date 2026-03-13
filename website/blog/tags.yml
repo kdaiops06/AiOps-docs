@@ -1,19 +1,44 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+devops:
+  label: DevOps
+  description: CI/CD, GitOps, automation, infrastructure as code, and deployment strategies.
+  permalink: /devops
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+aiops:
+  label: AIOps
+  description: AI for IT operations — anomaly detection, event correlation, and automated remediation.
+  permalink: /aiops
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+cloud:
+  label: Cloud
+  description: AWS, Azure, GCP — architecture, migration, cost optimization, and multi-cloud strategies.
+  permalink: /cloud
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+platform-engineering:
+  label: Platform Engineering
+  description: Internal developer platforms, self-service infrastructure, and developer experience.
+  permalink: /platform-engineering
+
+kubernetes:
+  label: Kubernetes
+  description: Container orchestration, Helm, service mesh, and cluster operations.
+  permalink: /kubernetes
+
+observability:
+  label: Observability
+  description: Monitoring, distributed tracing, logging, and SLO/SLI tracking.
+  permalink: /observability
+
+ai-operations:
+  label: AI Operations
+  description: Running ML models in production, AI infrastructure, and MLOps.
+  permalink: /ai-operations
+
+terraform:
+  label: Terraform
+  description: Infrastructure as Code with Terraform — modules, state management, and best practices.
+  permalink: /terraform
+
+tech-news:
+  label: Tech News
+  description: Weekly roundups of DevOps, AIOps, and cloud infrastructure news.
+  permalink: /tech-news
