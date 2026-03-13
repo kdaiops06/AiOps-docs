@@ -3,6 +3,7 @@
   "position": 7,
   "link": {
     "type": "generated-index",
+    "slug": "category/labs",
     "description": "End-to-end projects and labs — build real AI applications, AIOps pipelines, and intelligent systems."
   }
 }

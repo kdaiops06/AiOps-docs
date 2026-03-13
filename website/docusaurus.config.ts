@@ -103,7 +103,7 @@ const config: Config = {
           items: [
             {
               label: 'Getting Started',
-              to: '/docs/intro',
+              to: '/docs/',
             },
           ],
         },
@@ -112,15 +112,15 @@ const config: Config = {
           items: [
             {
               label: 'AIOps',
-              to: '/docs/intro',
+              to: '/docs/category/aiops',
             },
             {
               label: 'AI Infrastructure',
-              to: '/docs/intro',
+              to: '/docs/category/ai-infrastructure',
             },
             {
               label: 'Tool Setup',
-              to: '/docs/intro',
+              to: '/docs/category/tool-setup',
             },
           ],
         },
