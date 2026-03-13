@@ -1,6 +1,6 @@
 # AiOps Knowledge Hub
 
-**Website:** [aiopsvisate.com](https://aiopsvisate.com)
+**Website:** [aiopsvista.com](https://aiopsvista.com/)
 
 A comprehensive knowledge-sharing platform for AIOps, AI Infrastructure, and modern AI tooling. This repository powers the documentation published on aiopsvisate.com — designed to help engineers, learners, and practitioners get hands-on with AI-driven operations and infrastructure.
 
