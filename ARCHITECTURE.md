@@ -81,7 +81,7 @@ aiopsvista.com/
 ├── /services            → Detailed consulting services + case studies
 ├── /blog                → Technical blog (DevOps, AIOps, Cloud, AI)
 ├── /blog/tags/devops    → Blog filtered by category
-├── /docs/               → Documentation portal (6 categories)
+├── /docs/               → Documentation portal (9 categories)
 ├── /tech-news           → AI-curated tech news and industry updates
 ├── /resources           → Templates, guides, courses (monetization)
 ├── /about               → Mission, values, expertise
@@ -206,32 +206,81 @@ Full post content here...
 ```
 website/docs/
 ├── intro.md                           # Welcome page (slug: /)
+├── ai-tools/                          # AI tool analysis (13+ tools)
+│   ├── _category_.json
+│   ├── getting-started.md
+│   ├── llm-security-tools.md
+│   ├── ai-observability-tools.md
+│   ├── llm-orchestration-tools.md
+│   ├── rag-platforms.md
+│   ├── ai-agent-frameworks.md
+│   ├── vector-databases.md
+│   ├── ai-gateways.md
+│   ├── langsmith.md
+│   ├── pinecone.md
+│   ├── qdrant.md
+│   ├── weaviate.md
+│   └── slashllm.md
+├── ai-architecture/                   # Architecture guides (15 guides)
+│   ├── _category_.json
+│   ├── getting-started.md
+│   ├── secure-llm-pipelines.md
+│   ├── ai-observability-stack.md
+│   ├── devops-for-ai-agents.md
+│   ├── enterprise-ai-security.md
+│   ├── production-rag-systems.md
+│   ├── ai-gateway-architecture.md
+│   ├── ai-infrastructure-kubernetes.md
+│   ├── llm-monitoring-tracing.md
+│   ├── multi-model-llm-routing.md
+│   ├── ai-cost-optimization.md
+│   ├── architecture-playbooks.md
+│   ├── prompt-injection-defense.md
+│   ├── secure-llm-api-gateway.md
+│   ├── ai-agent-infrastructure.md
+│   ├── ai-data-pipeline.md
+│   └── llm-evaluation-testing.md
+├── comparisons/                       # Tool comparison guides (6 comparisons)
+│   ├── _category_.json
+│   ├── getting-started.md
+│   ├── pinecone-vs-qdrant.md
+│   ├── weaviate-vs-qdrant.md
+│   ├── langchain-vs-llamaindex.md
+│   ├── haystack-vs-llamaindex.md
+│   ├── langsmith-vs-langfuse.md
+│   └── portkey-vs-litellm.md
 ├── aiops/
 │   ├── _category_.json
 │   ├── getting-started.md
-│   ├── anomaly-detection.md
-│   ├── incident-automation.md
-│   └── aiops-architecture.md
+│   ├── architecture-patterns.md
+│   └── incident-detection.md
 ├── cloud-devops/
 │   ├── _category_.json
 │   ├── getting-started.md
 │   ├── terraform-best-practices.md
-│   ├── cicd-automation.md
-│   └── aws-architecture.md
+│   ├── cicd-pipeline-patterns.md
+│   ├── kubernetes-operations.md
+│   └── observability-stack.md
 ├── ai-infra/
 │   ├── _category_.json
 │   ├── getting-started.md
-│   ├── gpu-clusters.md
+│   ├── gpu-cluster-setup.md
 │   └── model-serving.md
 ├── tool-setup/
 │   ├── _category_.json
 │   ├── getting-started.md
-│   ├── docker-setup.md
-│   └── kubernetes-setup.md
+│   ├── vscode-setup.md
+│   └── docker-setup.md
 ├── ai-learning/
-│   └── ...
+│   ├── _category_.json
+│   ├── getting-started.md
+│   ├── prompt-engineering.md
+│   └── rag-systems.md
 └── labs/
-    └── ...
+    ├── _category_.json
+    ├── getting-started.md
+    ├── aiops-monitoring-lab.md
+    └── rag-assistant-lab.md
 ```
 
 ### Documentation Template
@@ -429,7 +478,7 @@ Format as a Markdown blog post with:
 - [x] Services page with 6 offerings
 - [x] About page
 - [x] Contact page with Calendly + email
-- [x] Documentation portal (6 categories)
+- [x] Documentation portal (9 categories)
 - [x] Professional CSS theme
 - [x] Dark mode support
 - [x] Responsive design

@@ -2,7 +2,7 @@
 
 **AI Infrastructure Intelligence Hub | DevOps & AIOps Consulting | LLM Security & Observability**
 
-[![Live](https://img.shields.io/badge/Live-aiopsvista.com-0f62fe?style=flat-square)](https://aiopsvista.com) [![Pages](https://img.shields.io/badge/Pages-80+-6929c4?style=flat-square)](#pages) [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-222?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/actions) [![Docusaurus](https://img.shields.io/badge/Docusaurus-3.9.2-3ecc5f?style=flat-square)](https://docusaurus.io)
+[![Live](https://img.shields.io/badge/Live-aiopsvista.com-0f62fe?style=flat-square)](https://aiopsvista.com) [![Pages](https://img.shields.io/badge/Pages-90+-6929c4?style=flat-square)](#pages) [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-222?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/actions) [![Docusaurus](https://img.shields.io/badge/Docusaurus-3.9.2-3ecc5f?style=flat-square)](https://docusaurus.io)
 
 [Live Site](https://aiopsvista.com) · [AI Tool Directory](https://aiopsvista.com/ai-tools) · [Comparisons](https://aiopsvista.com/comparisons) · [Docs](https://aiopsvista.com/docs/) · [Blog](https://aiopsvista.com/blog) · [Partner Program](https://aiopsvista.com/partner-with-aiopsvista)
 
@@ -59,13 +59,24 @@ Head-to-head feature comparisons with deployment complexity, enterprise readines
 - Pinecone vs Weaviate
 - SlashLLM vs Lakera Guard
 
+### Comparison Docs (`/docs/comparisons`)
+In-depth markdown comparison guides with architecture diagrams, feature tables, deployment considerations, and security analysis:
+- Pinecone vs Qdrant — Managed cloud vs open-source vector search
+- Weaviate vs Qdrant — Module-based extensibility vs Rust-native performance
+- LangChain vs LlamaIndex — General-purpose orchestration vs data-centric RAG
+- Haystack vs LlamaIndex — Pipeline-first RAG vs data-centric indexing
+- LangSmith vs Langfuse — Commercial LLM dev platform vs open-source observability
+- Portkey vs LiteLLM — Commercial AI gateway vs lightweight open-source proxy
+
 ### AI Tools Docs (`/docs/ai-tools`)
 Detailed documentation for each tool category:
 - LLM Security Tools — Lakera Guard, Guardrails AI, Rebuff, SlashLLM
-- AI Observability Tools — Langfuse, Arize Phoenix
+- AI Observability Tools — Langfuse, Arize Phoenix, LangSmith
 - LLM Orchestration Tools — LangChain
 - RAG Platforms — Haystack, LlamaIndex
 - AI Agent Frameworks — CrewAI, AutoGen
+- Vector Databases — Pinecone, Qdrant, Weaviate
+- AI Gateways — Portkey, LiteLLM
 
 ### Partnership Program (`/partner-with-aiopsvista`)
 AI infrastructure startups can partner for technical reviews, architecture guide integration, tool directory listings, and consulting referrals.
@@ -78,7 +89,8 @@ In-depth technical guides across 8 categories:
 
 - **AI Tools** — LLM security, AI observability, orchestration, RAG platforms, and agent framework analysis
 - **AIOps** — Architecture patterns, AI-powered incident detection, anomaly detection
-- **AI Architecture** — Secure LLM pipelines, AI observability stack, production RAG systems, AI gateway architecture, DevOps for AI agents, enterprise AI security & governance
+- **AI Architecture** — 15 guides: secure LLM pipelines, AI observability stack, production RAG systems, AI gateway architecture, DevOps for AI agents, enterprise AI security, LLM monitoring & tracing, multi-model orchestration, AI cost optimization, prompt injection defense, and more
+- **Tool Comparisons** — In-depth comparison guides: Pinecone vs Qdrant, Weaviate vs Qdrant, LangChain vs LlamaIndex, Haystack vs LlamaIndex, LangSmith vs Langfuse, Portkey vs LiteLLM
 - **AI Infrastructure** — GPU cluster setup, model serving with Triton/vLLM, MLOps
 - **Cloud & DevOps** — CI/CD pipeline patterns, Terraform best practices, Kubernetes operations, observability stack
 - **Tool Setup** — VS Code for DevOps, Docker development workflows
@@ -140,9 +152,10 @@ AiOpsVista/
 │   │   │   ├── partner-with-aiopsvista.tsx
 │   │   │   └── ...             # About, Contact, Resources, etc.
 │   │   └── css/custom.css      # Professional theme
-│   ├── docs/                   # Documentation portal (8 categories, 35+ docs)
+│   ├── docs/                   # Documentation portal (9 categories, 55+ docs)
 │   │   ├── ai-tools/           # AI tool analysis by category
-│   │   ├── ai-architecture/    # LLM pipelines, observability, RAG, gateway
+│   │   ├── ai-architecture/    # LLM pipelines, observability, RAG, gateway, 15 guides
+│   │   ├── comparisons/        # Tool comparison guides (6 comparisons)
 │   │   ├── aiops/              # AI for IT operations
 │   │   ├── ai-infra/           # GPU clusters, model serving
 │   │   ├── ai-learning/        # ML, LLMs, prompt engineering
@@ -158,7 +171,7 @@ AiOpsVista/
 
 ## Pages
 
-**70+ pages live** — all returning HTTP 200. TTFB ~115ms via Fastly CDN.
+**90+ pages live** — all returning HTTP 200. TTFB ~115ms via Fastly CDN.
 
 | Page | URL | Status |
 |------|-----|--------|
@@ -182,6 +195,25 @@ AiOpsVista/
 | AI Observability Stack | [`/docs/ai-architecture/ai-observability-stack`](https://aiopsvista.com/docs/ai-architecture/ai-observability-stack) | ✅ Live |
 | DevOps for AI Agents | [`/docs/ai-architecture/devops-for-ai-agents`](https://aiopsvista.com/docs/ai-architecture/devops-for-ai-agents) | ✅ Live |
 | Enterprise AI Security | [`/docs/ai-architecture/enterprise-ai-security`](https://aiopsvista.com/docs/ai-architecture/enterprise-ai-security) | ✅ Live |
+| Production RAG Systems | [`/docs/ai-architecture/production-rag-systems`](https://aiopsvista.com/docs/ai-architecture/production-rag-systems) | ✅ Live |
+| AI Gateway Architecture | [`/docs/ai-architecture/ai-gateway-architecture`](https://aiopsvista.com/docs/ai-architecture/ai-gateway-architecture) | ✅ Live |
+| AI Infrastructure on K8s | [`/docs/ai-architecture/ai-infrastructure-kubernetes`](https://aiopsvista.com/docs/ai-architecture/ai-infrastructure-kubernetes) | ✅ Live |
+| LLM Monitoring & Tracing | [`/docs/ai-architecture/llm-monitoring-tracing`](https://aiopsvista.com/docs/ai-architecture/llm-monitoring-tracing) | ✅ Live |
+| Multi-Model LLM Routing | [`/docs/ai-architecture/multi-model-llm-routing`](https://aiopsvista.com/docs/ai-architecture/multi-model-llm-routing) | ✅ Live |
+| AI Cost Optimization | [`/docs/ai-architecture/ai-cost-optimization`](https://aiopsvista.com/docs/ai-architecture/ai-cost-optimization) | ✅ Live |
+| Architecture Playbooks | [`/docs/ai-architecture/architecture-playbooks`](https://aiopsvista.com/docs/ai-architecture/architecture-playbooks) | ✅ Live |
+| Prompt Injection Defense | [`/docs/ai-architecture/prompt-injection-defense`](https://aiopsvista.com/docs/ai-architecture/prompt-injection-defense) | ✅ Live |
+| Secure LLM API Gateway | [`/docs/ai-architecture/secure-llm-api-gateway`](https://aiopsvista.com/docs/ai-architecture/secure-llm-api-gateway) | ✅ Live |
+| AI Agent Infrastructure | [`/docs/ai-architecture/ai-agent-infrastructure`](https://aiopsvista.com/docs/ai-architecture/ai-agent-infrastructure) | ✅ Live |
+| AI Data Pipeline | [`/docs/ai-architecture/ai-data-pipeline`](https://aiopsvista.com/docs/ai-architecture/ai-data-pipeline) | ✅ Live |
+| LLM Evaluation & Testing | [`/docs/ai-architecture/llm-evaluation-testing`](https://aiopsvista.com/docs/ai-architecture/llm-evaluation-testing) | ✅ Live |
+| Tool Comparisons Index | [`/docs/comparisons/`](https://aiopsvista.com/docs/category/tool-comparisons) | ✅ New |
+| Pinecone vs Qdrant | [`/docs/comparisons/pinecone-vs-qdrant`](https://aiopsvista.com/docs/comparisons/pinecone-vs-qdrant) | ✅ New |
+| Weaviate vs Qdrant | [`/docs/comparisons/weaviate-vs-qdrant`](https://aiopsvista.com/docs/comparisons/weaviate-vs-qdrant) | ✅ New |
+| LangChain vs LlamaIndex | [`/docs/comparisons/langchain-vs-llamaindex`](https://aiopsvista.com/docs/comparisons/langchain-vs-llamaindex) | ✅ New |
+| Haystack vs LlamaIndex | [`/docs/comparisons/haystack-vs-llamaindex`](https://aiopsvista.com/docs/comparisons/haystack-vs-llamaindex) | ✅ New |
+| LangSmith vs Langfuse | [`/docs/comparisons/langsmith-vs-langfuse`](https://aiopsvista.com/docs/comparisons/langsmith-vs-langfuse) | ✅ New |
+| Portkey vs LiteLLM | [`/docs/comparisons/portkey-vs-litellm`](https://aiopsvista.com/docs/comparisons/portkey-vs-litellm) | ✅ New |
 | Case Studies | [`/case-studies`](https://aiopsvista.com/case-studies) | ✅ Live |
 | Docs Portal | [`/docs/`](https://aiopsvista.com/docs/) | ✅ Live |
 | Blog | [`/blog`](https://aiopsvista.com/blog) | ✅ Live |
@@ -232,13 +264,22 @@ Tool reviews live in `website/src/pages/tools/`. To add a new review:
 
 ### How to Add a Comparison Page
 
-Comparisons are defined in `website/src/pages/comparisons/index.tsx`:
+**React-based comparisons** are defined in `website/src/pages/comparisons/index.tsx`:
 
 1. Add a new comparison object to the `comparisons` array in `index.tsx`
 2. Include: `slug`, `toolA`, `toolB`, `category`, `summary`, `rows` (comparison dimensions), `structured` (deployment, enterprise, security assessments), `toolAVerdict`, `toolBVerdict`, `recommendation`
 3. Create a new route file: `website/src/pages/comparisons/<tool-a>-vs-<tool-b>.tsx`
 4. Export the named component from `index.tsx` (see existing examples)
 5. Add the comparison to link sections in relevant tool review pages and docs
+
+**Markdown-based comparisons** live in `website/docs/comparisons/`:
+
+1. Create a new Markdown file: `website/docs/comparisons/<tool-a>-vs-<tool-b>.md`
+2. Add frontmatter: `sidebar_position`, `title`, `description`, `keywords`
+3. Include: Overview, Architecture Diagram (ASCII), Architecture Differences, Feature Comparison Table, Deployment Considerations, Security Capabilities, Recommended Use Cases
+4. Add `## Recommended Tools`, `## Related Guides`, and `## Related Comparisons` sections
+5. Update `website/docs/comparisons/getting-started.md` to include the new comparison
+6. Cross-link from relevant tool docs and architecture guides
 
 ### How to Add an Architecture Guide
 
@@ -247,7 +288,7 @@ Architecture guides live in `website/docs/ai-architecture/`:
 1. Create a new Markdown file: `website/docs/ai-architecture/<guide-name>.md`
 2. Add frontmatter: `sidebar_position`, `title`, `description`, `keywords`
 3. Include: architecture diagrams (ASCII), deployment patterns, example stack configurations, implementation checklist
-4. Add a `## Related` section with links to relevant tools, comparisons, and consulting services
+4. Add a `## Related Guides` section with links to relevant tools, comparisons, and consulting services
 5. Update `website/docs/ai-architecture/getting-started.md` to include the new guide in the navigation table
 6. The sidebar updates automatically via the `autogenerated` configuration
 
