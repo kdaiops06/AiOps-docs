@@ -2,7 +2,9 @@
 
 **Technical Intelligence Hub for AI Infrastructure, DevOps & Enterprise LLM Systems**
 
-[aiopsvista.com](https://aiopsvista.com) · [AI Tool Directory](https://aiopsvista.com/ai-tools) · [Documentation](https://aiopsvista.com/docs/) · [Blog](https://aiopsvista.com/blog)
+[![Live](https://img.shields.io/badge/Live-aiopsvista.com-0f62fe?style=flat-square)](https://aiopsvista.com) [![Pages](https://img.shields.io/badge/Pages-68-6929c4?style=flat-square)](#pages) [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-222?style=flat-square)](https://github.com/kdaiops06/AiOpsVista/actions) [![Docusaurus](https://img.shields.io/badge/Docusaurus-3.9.2-3ecc5f?style=flat-square)](https://docusaurus.io)
+
+[Live Site](https://aiopsvista.com) · [AI Tool Directory](https://aiopsvista.com/ai-tools) · [Comparisons](https://aiopsvista.com/comparisons) · [Docs](https://aiopsvista.com/docs/) · [Blog](https://aiopsvista.com/blog) · [Partner Program](https://aiopsvista.com/partner-with-aiopsvista)
 
 ---
 
@@ -136,22 +138,36 @@ AiOpsVista/
 
 ## Pages
 
-| Page | URL | Purpose |
-|------|-----|---------|
-| Home | `/` | Landing page with services, AI tools section, blog, newsletter |
-| Services | `/services` | 8 consulting services including AI infrastructure & security |
-| AI Tools | `/ai-tools` | Curated directory of 12+ AI infrastructure tools |
-| Tool Reviews | `/tools` | In-depth technical reviews (Lakera, Langfuse, LangChain) |
-| Comparisons | `/comparisons` | Head-to-head tool comparisons with scoring |
-| Case Studies | `/case-studies` | Real-world engagement results with metrics |
-| Docs | `/docs/` | Technical documentation portal (7 categories) |
-| Blog | `/blog` | Technical articles with tags and RSS |
-| Partner | `/partner-with-aiopsvista` | Partnership program for AI startups |
-| Tech News | `/tech-news` | Curated industry news by month |
-| Resources | `/resources` | Free guides + premium offerings |
-| Newsletter | `/newsletter` | Email subscription page |
-| About | `/about` | Mission, values, expertise |
-| Contact | `/contact` | Email, Calendly, LinkedIn, FAQ |
+**68 pages live** — all returning HTTP 200. TTFB ~115ms via Fastly CDN.
+
+| Page | URL | Status |
+|------|-----|--------|
+| Home | [`/`](https://aiopsvista.com) | ✅ Live |
+| Services | [`/services`](https://aiopsvista.com/services) | ✅ Live |
+| AI Tools Directory | [`/ai-tools`](https://aiopsvista.com/ai-tools) | ✅ Live |
+| Tool Reviews Index | [`/tools`](https://aiopsvista.com/tools) | ✅ Live |
+| Lakera Guard Review | [`/tools/lakera-guard-review`](https://aiopsvista.com/tools/lakera-guard-review) | ✅ Live |
+| Langfuse Review | [`/tools/langfuse-review`](https://aiopsvista.com/tools/langfuse-review) | ✅ Live |
+| LangChain Review | [`/tools/langchain-review`](https://aiopsvista.com/tools/langchain-review) | ✅ Live |
+| Comparisons Index | [`/comparisons`](https://aiopsvista.com/comparisons) | ✅ Live |
+| LangChain vs Haystack | [`/comparisons/langchain-vs-haystack`](https://aiopsvista.com/comparisons/langchain-vs-haystack) | ✅ Live |
+| Lakera vs Guardrails | [`/comparisons/lakera-vs-guardrails`](https://aiopsvista.com/comparisons/lakera-vs-guardrails) | ✅ Live |
+| CrewAI vs AutoGen | [`/comparisons/crewai-vs-autogen`](https://aiopsvista.com/comparisons/crewai-vs-autogen) | ✅ Live |
+| Langfuse vs Arize | [`/comparisons/langfuse-vs-arize`](https://aiopsvista.com/comparisons/langfuse-vs-arize) | ✅ Live |
+| Partnership Program | [`/partner-with-aiopsvista`](https://aiopsvista.com/partner-with-aiopsvista) | ✅ Live |
+| AI Architecture Guides | [`/docs/ai-architecture/`](https://aiopsvista.com/docs/category/ai-architecture) | ✅ Live |
+| Secure LLM Pipelines | [`/docs/ai-architecture/secure-llm-pipelines`](https://aiopsvista.com/docs/ai-architecture/secure-llm-pipelines) | ✅ Live |
+| AI Observability Stack | [`/docs/ai-architecture/ai-observability-stack`](https://aiopsvista.com/docs/ai-architecture/ai-observability-stack) | ✅ Live |
+| DevOps for AI Agents | [`/docs/ai-architecture/devops-for-ai-agents`](https://aiopsvista.com/docs/ai-architecture/devops-for-ai-agents) | ✅ Live |
+| Enterprise AI Security | [`/docs/ai-architecture/enterprise-ai-security`](https://aiopsvista.com/docs/ai-architecture/enterprise-ai-security) | ✅ Live |
+| Case Studies | [`/case-studies`](https://aiopsvista.com/case-studies) | ✅ Live |
+| Docs Portal | [`/docs/`](https://aiopsvista.com/docs/) | ✅ Live |
+| Blog | [`/blog`](https://aiopsvista.com/blog) | ✅ Live |
+| Tech News | [`/tech-news`](https://aiopsvista.com/tech-news) | ✅ Live |
+| Resources | [`/resources`](https://aiopsvista.com/resources) | ✅ Live |
+| Newsletter | [`/newsletter`](https://aiopsvista.com/newsletter) | ✅ Live |
+| About | [`/about`](https://aiopsvista.com/about) | ✅ Live |
+| Contact | [`/contact`](https://aiopsvista.com/contact) | ✅ Live |
 
 ---
 
