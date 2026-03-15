@@ -325,4 +325,5 @@ def safe_llm_call(prompt: str) -> str:
 - [Lakera Guard Review →](/tools/lakera-guard-review)
 - [LLM Security Tool Comparison →](/comparisons/lakera-vs-guardrails)
 - [SlashLLM vs Lakera Guard →](/comparisons/slashllm-vs-lakera)
+- [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Infrastructure Consulting →](/services)

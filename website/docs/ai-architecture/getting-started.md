@@ -53,9 +53,6 @@ When designing AI infrastructure, evaluate every component against these criteri
 | [Enterprise AI Security](./enterprise-ai-security) | Governance, compliance, and risk management |
 | [Production RAG Systems](./production-rag-systems) | Retrieval architecture, hybrid search, re-ranking, caching |
 | [AI Gateway Architecture](./ai-gateway-architecture) | Centralized LLM routing, security, and cost management |
-| [Prompt Injection Defense](./prompt-injection-defense) | Multi-layer defense against prompt injection and jailbreak attacks |
-| [AI Infrastructure on Kubernetes](./ai-infrastructure-kubernetes) | GPU scheduling, model serving, inference autoscaling on K8s |
-| [LLM Monitoring and Tracing](./llm-monitoring-tracing) | OpenTelemetry instrumentation, SLIs/SLOs, alerting, dashboards |
 
 ## Related Resources
 

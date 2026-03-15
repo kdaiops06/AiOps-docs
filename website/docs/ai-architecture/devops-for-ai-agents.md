@@ -324,11 +324,8 @@ Every prompt change triggers:
 
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
-- [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
-- [AI Infrastructure on Kubernetes →](./ai-infrastructure-kubernetes)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Agent Frameworks →](/docs/ai-tools/ai-agent-frameworks)
 - [CrewAI vs AutoGen →](/comparisons/crewai-vs-autogen)
 - [Kubernetes Operations →](/docs/cloud-devops/kubernetes-operations)
-- [CI/CD Pipeline Patterns →](/docs/cloud-devops/cicd-pipeline-patterns)
 - [AI Infrastructure Consulting →](/services)

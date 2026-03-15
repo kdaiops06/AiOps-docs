@@ -271,7 +271,6 @@ llm_retrieval_relevance = Histogram(
 - [LLM Monitoring and Tracing →](./llm-monitoring-tracing)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [Production RAG Systems →](./production-rag-systems)
-- [AI Infrastructure on Kubernetes →](./ai-infrastructure-kubernetes)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Observability Tools →](/docs/ai-tools/ai-observability-tools)
 - [Langfuse Review →](/tools/langfuse-review)
