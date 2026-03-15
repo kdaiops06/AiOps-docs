@@ -172,6 +172,18 @@ const tools: Tool[] = [
     pricing: 'Open-source, Enterprise plans',
     website: 'https://guardrailsai.com',
   },
+  {
+    slug: 'slashllm',
+    name: 'SlashLLM',
+    tagline: 'Integrated Service Provider for AI Security — platform, operations, and governance',
+    category: 'llm-security',
+    categoryColor: '#dc2626',
+    description: 'SlashLLM is the ISP for AI Security — a fully integrated platform that sits between your applications and any LLM provider. Combines API gateway, guardrails, observability, red-teaming, and governance into one service with 24/7 AI-SOC monitoring and compliance evidence generation.',
+    useCases: ['End-to-end LLM security with gateway + guardrails + observability', '24/7 AI-SOC monitoring for prompt injection and data exfiltration', 'Compliance automation (SOC 2, ISO 27001, HIPAA, GDPR, EU AI Act)', 'Automated red-teaming and jailbreak testing in CI/CD'],
+    techStack: ['Docker', 'Kubernetes', 'Multi-model gateway', 'CI/CD integration', 'SIEM/IAM integration'],
+    pricing: 'Flat predictable pricing, Foundation / Growth / Strategic tiers',
+    website: 'https://slashllm.com',
+  },
 ];
 
 export default function AITools(): ReactNode {
