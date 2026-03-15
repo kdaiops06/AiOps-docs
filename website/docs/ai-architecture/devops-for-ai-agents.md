@@ -28,7 +28,7 @@ Traditional microservices are deterministic — same input, same output. AI agen
 | Cost control | Compute | Compute + tokens + API calls |
 | Safety | Input validation | Input validation + output guardrails + action limits |
 
-## Agent Architecture Patterns
+## Architecture Diagram
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -320,12 +320,25 @@ Every prompt change triggers:
 - [ ] Implement gradual rollout with automated quality checks
 - [ ] Create runbooks for agent incidents
 
-## Related
+## Recommended Tools
 
+| Category | Tool | Purpose |
+|----------|------|---------|
+| **Agent Frameworks** | [AI Agent Frameworks →](/docs/ai-tools/ai-agent-frameworks) | Production agent orchestration platforms |
+| **Observability** | [Langfuse →](/tools/langfuse-review) | Agent execution tracing and evaluation |
+| **Observability** | [AI Observability Tools →](/docs/ai-tools/ai-observability-tools) | Monitoring tools for AI agent systems |
+| **Security** | [SlashLLM →](/docs/ai-tools/slashllm) | Guardrails and cost controls for agent pipelines |
+| **Comparison** | [CrewAI vs AutoGen →](/comparisons/crewai-vs-autogen) | Agent framework comparison for deployment decisions |
+
+## Related Guides
+
+- [AI Agent Infrastructure →](./ai-agent-infrastructure)
+- [LLM Evaluation & Testing →](./llm-evaluation-testing)
 - [Secure LLM Pipelines →](./secure-llm-pipelines)
 - [AI Observability Stack →](./ai-observability-stack)
 - [AI Gateway Architecture →](./ai-gateway-architecture)
 - [AI Agent Frameworks →](/docs/ai-tools/ai-agent-frameworks)
 - [CrewAI vs AutoGen →](/comparisons/crewai-vs-autogen)
 - [Kubernetes Operations →](/docs/cloud-devops/kubernetes-operations)
+- [Architecture Playbooks Index →](./architecture-playbooks)
 - [AI Infrastructure Consulting →](/services)
