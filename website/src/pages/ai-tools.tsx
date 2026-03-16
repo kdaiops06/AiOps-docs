@@ -40,6 +40,81 @@ const CATEGORIES = [
 
 const REVIEWED_TOOLS = new Set(['lakera-guard', 'langfuse', 'langchain']);
 
+const FEATURED_SLUGS = ['slashllm', 'pinecone', 'weaviate', 'arize-phoenix', 'langchain'];
+
+const TOOL_ARCHITECTURE_GUIDES: Record<string, {label: string; path: string}[]> = {
+  'lakera-guard': [
+    {label: 'Secure LLM Pipeline', path: '/docs/ai-architecture/secure-llm-pipelines'},
+    {label: 'Prompt Injection Defense', path: '/docs/ai-architecture/prompt-injection-defense'},
+  ],
+  'guardrails-ai': [
+    {label: 'Secure LLM Pipeline', path: '/docs/ai-architecture/secure-llm-pipelines'},
+  ],
+  'slashllm': [
+    {label: 'Secure LLM Pipeline', path: '/docs/ai-architecture/secure-llm-pipelines'},
+    {label: 'Prompt Injection Defense', path: '/docs/ai-architecture/prompt-injection-defense'},
+    {label: 'Enterprise AI Security', path: '/docs/ai-architecture/enterprise-ai-security'},
+  ],
+  'protect-ai': [
+    {label: 'Secure LLM Pipeline', path: '/docs/ai-architecture/secure-llm-pipelines'},
+  ],
+  'robust-intelligence': [
+    {label: 'Secure LLM Pipeline', path: '/docs/ai-architecture/secure-llm-pipelines'},
+  ],
+  'pinecone': [
+    {label: 'Production RAG Systems', path: '/docs/ai-architecture/production-rag-systems'},
+  ],
+  'weaviate': [
+    {label: 'Production RAG Systems', path: '/docs/ai-architecture/production-rag-systems'},
+  ],
+  'qdrant': [
+    {label: 'Production RAG Systems', path: '/docs/ai-architecture/production-rag-systems'},
+  ],
+  'langfuse': [
+    {label: 'AI Observability Stack', path: '/docs/ai-architecture/ai-observability-stack'},
+    {label: 'LLM Monitoring & Tracing', path: '/docs/ai-architecture/llm-monitoring-tracing'},
+  ],
+  'arize-phoenix': [
+    {label: 'AI Observability Stack', path: '/docs/ai-architecture/ai-observability-stack'},
+    {label: 'LLM Monitoring & Tracing', path: '/docs/ai-architecture/llm-monitoring-tracing'},
+  ],
+  'braintrust': [
+    {label: 'LLM Evaluation & Testing', path: '/docs/ai-architecture/llm-evaluation-testing'},
+  ],
+  'langchain': [
+    {label: 'Production RAG Systems', path: '/docs/ai-architecture/production-rag-systems'},
+    {label: 'AI Agent Infrastructure', path: '/docs/ai-architecture/ai-agent-infrastructure'},
+  ],
+  'haystack': [
+    {label: 'Production RAG Systems', path: '/docs/ai-architecture/production-rag-systems'},
+  ],
+  'llamaindex': [
+    {label: 'Production RAG Systems', path: '/docs/ai-architecture/production-rag-systems'},
+  ],
+  'crewai': [
+    {label: 'AI Agent Infrastructure', path: '/docs/ai-architecture/ai-agent-infrastructure'},
+    {label: 'DevOps for AI Agents', path: '/docs/ai-architecture/devops-for-ai-agents'},
+  ],
+  'autogen': [
+    {label: 'AI Agent Infrastructure', path: '/docs/ai-architecture/ai-agent-infrastructure'},
+    {label: 'DevOps for AI Agents', path: '/docs/ai-architecture/devops-for-ai-agents'},
+  ],
+  'portkey': [
+    {label: 'AI Gateway Architecture', path: '/docs/ai-architecture/ai-gateway-architecture'},
+    {label: 'Multi-Model LLM Routing', path: '/docs/ai-architecture/multi-model-llm-routing'},
+  ],
+  'litellm': [
+    {label: 'AI Gateway Architecture', path: '/docs/ai-architecture/ai-gateway-architecture'},
+    {label: 'Multi-Model LLM Routing', path: '/docs/ai-architecture/multi-model-llm-routing'},
+  ],
+  'mlflow': [
+    {label: 'AI Infrastructure on Kubernetes', path: '/docs/ai-architecture/ai-infrastructure-kubernetes'},
+  ],
+  'kubeflow': [
+    {label: 'AI Infrastructure on Kubernetes', path: '/docs/ai-architecture/ai-infrastructure-kubernetes'},
+  ],
+};
+
 const tools: Tool[] = [
   // ── LLM Security ──
   {
@@ -402,6 +477,7 @@ const tools: Tool[] = [
     techStack: ['Python', 'REST API', 'SQL backend', 'Docker', 'Kubernetes'],
     pricing: 'Open-source (Apache 2.0)',
     website: 'https://mlflow.org',
+    docsPath: '/docs/ai-infra/getting-started',
   },
   {
     slug: 'kubeflow',
@@ -414,6 +490,7 @@ const tools: Tool[] = [
     techStack: ['Kubernetes', 'Python', 'Istio', 'Knative', 'TensorFlow/PyTorch'],
     pricing: 'Open-source (Apache 2.0)',
     website: 'https://kubeflow.org',
+    docsPath: '/docs/ai-architecture/ai-infrastructure-kubernetes',
   },
   {
     slug: 'together-ai',
@@ -427,6 +504,7 @@ const tools: Tool[] = [
     techStack: ['REST API', 'Python SDK', 'OpenAI-compatible', 'NVIDIA GPUs'],
     pricing: 'Pay-per-token, volume discounts',
     website: 'https://together.ai',
+    docsPath: '/docs/ai-infra/model-serving',
   },
   {
     slug: 'anyscale',
@@ -439,10 +517,18 @@ const tools: Tool[] = [
     techStack: ['Ray', 'Python', 'Kubernetes', 'AWS/GCP', 'NVIDIA GPUs'],
     pricing: 'Pay-as-you-go compute, Enterprise plans',
     website: 'https://anyscale.com',
+    docsPath: '/docs/ai-infra/model-serving',
   },
 ];
 
 export default function AITools(): ReactNode {
+  const categoryCounts = tools.reduce((acc, t) => {
+    acc[t.category] = (acc[t.category] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  const featuredTools = tools.filter(t => FEATURED_SLUGS.includes(t.slug));
+
   return (
     <Layout
       title="AI Infrastructure Tool Directory"
@@ -468,6 +554,42 @@ export default function AITools(): ReactNode {
       </header>
 
       <main>
+        {/* Featured Tools */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Highlighted</span>
+              <h2>Featured AI Infrastructure Tools</h2>
+              <p>Key platforms used in production AI infrastructure stacks — validated by practitioners.</p>
+            </div>
+            <div className="services-grid" style={{maxWidth: '1000px'}}>
+              {featuredTools.map(tool => (
+                <a key={tool.slug} href={`#${tool.slug}`} className="doc-card" style={{textDecoration: 'none'}}>
+                  <div style={{display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', flexWrap: 'wrap'}}>
+                    <h3 style={{margin: 0}}>{tool.name}</h3>
+                    {tool.badge && (
+                      <span style={{
+                        fontSize: '0.7rem',
+                        fontWeight: 700,
+                        padding: '0.1rem 0.4rem',
+                        borderRadius: '4px',
+                        background: BADGE_CONFIG[tool.badge].bg,
+                        color: BADGE_CONFIG[tool.badge].color,
+                      }}>
+                        {BADGE_CONFIG[tool.badge].label}
+                      </span>
+                    )}
+                  </div>
+                  <p style={{fontSize: '0.88rem', color: 'var(--ifm-color-primary)', fontWeight: 600, marginBottom: '0.5rem'}}>{tool.tagline}</p>
+                  <span className="case-tag" style={{background: `${tool.categoryColor}15`, color: tool.categoryColor}}>
+                    {CATEGORIES.find(c => c.value === tool.category)?.label}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Category Filter */}
         <section className="section">
           <div className="container">
@@ -480,7 +602,7 @@ export default function AITools(): ReactNode {
             <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', marginBottom: '3rem'}}>
               {CATEGORIES.map(cat => (
                 <span key={cat.value} className="tool-filter-tag">
-                  {cat.label}
+                  {cat.value === 'all' ? `All (${tools.length})` : `${cat.label} (${categoryCounts[cat.value] || 0})`}
                 </span>
               ))}
             </div>
@@ -488,7 +610,7 @@ export default function AITools(): ReactNode {
             {/* Tool Cards */}
             <div className="tool-directory-grid">
               {tools.map(tool => (
-                <div key={tool.slug} className="tool-card">
+                <div key={tool.slug} id={tool.slug} className="tool-card">
                   <div style={{display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap'}}>
                     <span className="case-tag" style={{background: `${tool.categoryColor}15`, color: tool.categoryColor}}>
                       {CATEGORIES.find(c => c.value === tool.category)?.label}
@@ -558,8 +680,66 @@ export default function AITools(): ReactNode {
                       </div>
                     </div>
                   )}
+                  {TOOL_ARCHITECTURE_GUIDES[tool.slug] && (
+                    <div style={{marginTop: '0.5rem', paddingTop: '0.5rem', borderTop: (tool.comparisonPaths && tool.comparisonPaths.length > 0) ? 'none' : '1px solid var(--card-border)'}}>
+                      <span style={{fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--ifm-color-emphasis-500)'}}>Architecture Guides</span>
+                      <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.4rem'}}>
+                        {TOOL_ARCHITECTURE_GUIDES[tool.slug].map(guide => (
+                          <Link key={guide.path} to={guide.path} style={{fontSize: '0.78rem', color: 'var(--ifm-color-primary)', fontWeight: 500}}>
+                            {guide.label} →
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {tools.filter(t => t.category === tool.category && t.slug !== tool.slug).length > 0 && (
+                    <div style={{marginTop: '0.5rem', paddingTop: '0.5rem'}}>
+                      <span style={{fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--ifm-color-emphasis-500)'}}>Related Tools</span>
+                      <div style={{display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.4rem'}}>
+                        {tools.filter(t => t.category === tool.category && t.slug !== tool.slug).slice(0, 3).map(t => (
+                          <a key={t.slug} href={`#${t.slug}`} style={{fontSize: '0.78rem', color: 'var(--ifm-color-primary)', fontWeight: 500, textDecoration: 'none'}}>
+                            {t.name} →
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Architecture Playbooks */}
+        <section className="section section-alt">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Architecture Guides</span>
+              <h2>Used in Architecture Playbooks</h2>
+              <p>These tools power the architectures described in our production-grade playbooks.</p>
+            </div>
+            <div className="services-grid" style={{maxWidth: '900px'}}>
+              <Link to="/docs/ai-architecture/production-rag-systems" className="doc-card">
+                <h3>Production RAG Architecture</h3>
+                <p>End-to-end retrieval-augmented generation with vector databases, orchestration, and observability.</p>
+              </Link>
+              <Link to="/docs/ai-architecture/secure-llm-pipelines" className="doc-card">
+                <h3>Secure LLM Pipeline Architecture</h3>
+                <p>Defense-in-depth security for LLM applications — guardrails, prompt injection defense, and compliance.</p>
+              </Link>
+              <Link to="/docs/ai-architecture/ai-observability-stack" className="doc-card">
+                <h3>AI Observability Pipeline</h3>
+                <p>Full-stack observability for AI systems — tracing, evaluation, cost analytics, and drift detection.</p>
+              </Link>
+              <Link to="/docs/ai-architecture/ai-gateway-architecture" className="doc-card">
+                <h3>LLM Gateway Architecture</h3>
+                <p>Multi-provider LLM routing, caching, rate limiting, and failover patterns for production.</p>
+              </Link>
+            </div>
+            <div style={{textAlign: 'center', marginTop: '2rem'}}>
+              <Link className="btn-primary" to="/docs/ai-architecture/architecture-playbooks">
+                All Architecture Playbooks →
+              </Link>
             </div>
           </div>
         </section>
